@@ -1075,9 +1075,8 @@ else
       echo "   9) Update this script"
       echo "   10) Backup WireGuard"
       echo "   11) Restore WireGuard"
-      until [[ "$WIREGUARD_OPTIONS" =~ ^[0-9]+$ ]] && [ "$WIREGUARD_OPTIONS" -ge 1 ] && [ "$WIREGUARD_OPTIONS" -le 11 ]; do
-        read -rp "Select an Option [1-11]: " -e -i 1 WIREGUARD_OPTIONS
-      done
+      echo ""
+      read -p "Masukkan pilihan anda, kemudian tekan ENTER: " WIREGUARD_OPTIONS
       case $WIREGUARD_OPTIONS in
       1) # WG Show
         if [ -x "$(command -v wg)" ]; then
@@ -1380,9 +1379,8 @@ PublicKey = $SERVER_PUBKEY" >>$WIREGUARD_CLIENT_PATH/"$NEW_CLIENT_NAME"-$WIREGUA
       echo "   7) Update this script"
       echo "   8) Backup WireGuard"
       echo "   9) Restore WireGuard"
-      until [[ "$WIREGUARD_OPTIONS" =~ ^[0-9]+$ ]] && [ "$WIREGUARD_OPTIONS" -ge 1 ] && [ "$WIREGUARD_OPTIONS" -le 9 ]; do
-        read -rp "Select an Option [1-9]: " -e -i 1 WIREGUARD_OPTIONS
-      done
+      echo ""
+      read -p "Masukkan pilihan anda, kemudian tekan ENTER: " WIREGUARD_OPTIONS
       case $WIREGUARD_OPTIONS in
       1) # WG Show
         if [ -x "$(command -v wg)" ]; then
