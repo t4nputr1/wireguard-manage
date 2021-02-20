@@ -1052,6 +1052,7 @@ PublicKey = $SERVER_PUBKEY" >>$WIREGUARD_CLIENT_PATH/"$CLIENT_NAME"-$WIREGUARD_P
       else
         service wg-quick@$WIREGUARD_PUB_NIC enable
         service wg-quick@$WIREGUARD_PUB_NIC restart
+      fi
   }
 
   # Setting Up Wireguard Config
