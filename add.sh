@@ -56,6 +56,9 @@ if [ -x "$(command -v wg)" ]; then
             echo "Error: You have $LASTIPV4 peers the max is 255"
             exit
           fi
+          read -p "Berapa hari account [$NEW_CLIENT_NAME] aktif: " AKTIF
+          today="$(date +"%Y-%m-%d")"
+	expire=$(date -d "$AKTIF days" +"%Y-%m-%d")
           echo "# $NEW_CLIENT_NAME start
 [Peer]
 PublicKey = $CLIENT_PUBKEY
@@ -79,4 +82,5 @@ PersistentKeepalive = $NAT_CHOICE
 PresharedKey = $PRESHARED_KEY
 PublicKey = $SERVER_PUBKEY" >>$WIREGUARD_CLIENT_PATH/"$NEW_CLIENT_NAME"-$WIREGUARD_PUB_NIC.conf
           echo "Client config --> $WIREGUARD_CLIENT_PATH/$NEW_CLIENT_NAME-$WIREGUARD_PUB_NIC.conf"
+          echo -e "Expired Date: $(date -d "$AKTIF days" +"%d-%m-%Y")"
         fi
