@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear
 # Global variables
 WIREGUARD_WEBSITE_URL="https://www.wireguard.com"
 WIREGUARD_PATH="/etc/wireguard"
